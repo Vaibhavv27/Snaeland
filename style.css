@@ -1,0 +1,218 @@
+:root {
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --primary: #5e3bff;
+  --accent: #ff6b9d;
+  --light: #f8f9ff;
+  --dark: #1a1a2e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+.gradient-text {
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=2000') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 5.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 1.2s ease;
+}
+
+.btn-primary {
+  background: var(--gradient-2);
+  color: rgb(255, 255, 255);
+  padding: 18px 45px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+  transition: all 0.3s;
+  animation: fadeInUp 1.4s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(245, 87, 108, 0.6);
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 6rem 10%;
+  background: rgb(168, 231, 223);
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 4rem;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gallery - 7 Photos with Masonry Style */
+.gallery-section {
+  padding: 6rem 8%;
+  background: linear-gradient(to bottom, #8e94b8, #e0e7ff);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 4rem;
+  color: var(--primary);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: 250px;
+}
+
+.gallery-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: all 0.4s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(90, 59, 255, 0.25);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tall { grid-row: span 2; }
+.wide { grid-column: span 2; }
+
+/* Packages */
+.packages-section {
+  padding: 8rem 8%;
+  background: var(--light);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.package-card {
+  border-radius: 25px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  transition: all 0.4s;
+  position: relative;
+}
+
+.package-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(90, 59, 255, 0.2);
+}
+
+.package-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 1rem 0;
+}
+
+.btn-secondary {
+  background: var(--gradient-3);
+  color: rgb(178, 133, 214);
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: #ff6b9d;
+  color: white;
+  padding: 8px 40px;
+  font-size: 0.9rem;
+  transform: rotate(45deg);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: var(--gradient-1);
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+footer h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 3.5rem; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .wide { grid-column: span
